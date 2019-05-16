@@ -12,13 +12,12 @@ from bottle_mold import Mold
 # setup logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(format="%(asctime)s:%(name)s:%(lineno)s:%(levelname)s - %(message)s",
-                    level=os.environ.get('SV_LOGGING_LEVEL'))
+                    level=os.environ.get('LOGGING_LEVEL'))
 
 app = application = Mold()
 
-# import apps
-services = ('home',)
-for service in services:
+# import services
+for service in config.services:
     mod = __import__('{service}.service'.format(service=service), fromlist=['app'])
     sub_app = getattr(mod, 'app')
     app.merge(sub_app)
