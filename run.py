@@ -18,7 +18,7 @@ app = application = Mold()
 
 # import services
 for service in config.services:
-    mod = __import__('{service}.service'.format(service=service), fromlist=['app'])
+    mod = __import__('{service}.view'.format(service=service), fromlist=['app'])
     sub_app = getattr(mod, 'app')
     app.merge(sub_app)
 
