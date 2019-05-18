@@ -1,2 +1,40 @@
 # bottle-rack
-Manage multiple python bottle services as a monolith locally and deploy as microservices 
+Similar to the concept of Flask Blueprints, Bottle-rack simplifies managing multiple Bottle services. You can use Bottle-rack to manage running and developing microservices locally and later deploying as separate services.
+
+
+## Install & Run
+
+```
+git clone git@github.com:peregrinius/bottle-rack.git
+cd bottle-rack
+
+# if you want to use a virtual environment
+virtualenv $(which python3) venv
+source venv/bin/activate
+
+python run.py
+```
+
+
+## Dependencies
+
+The only required dependency is bottle-mold, which is used to promote cleaner code in your services by removing boiler plate code from services. It includes:
+
+* handling CORS
+* ORM plugin configuration
+
+## Getting Started
+
+### Configuration
+
+Configuration is managed through the `config.py` file, here you can setup parameters for:
+
+* Logging
+* CORS
+* ORM configuration
+* registering services
+
+The config file consists of two kinds of two ways of setting values, with environment variables and as variables.
+
+* Environment variables should be used for values that need to be set for deploying services independently of bottle-rack
+* Variables should be used for values that are only required for running the web service using bottle-rack
