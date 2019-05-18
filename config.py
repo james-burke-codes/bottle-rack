@@ -6,6 +6,11 @@ This config file is broken up into two sections
 - rack config : which are used specifically for running your services on rack
 """
 
+# RACK CONFIG
+## declaring services
+services = ('home',)
+
+
 # ENVIRONMENT VARIABLES
 ## logging
 os.environ['LOGGING_LEVEL'] = 'INFO'
@@ -20,7 +25,3 @@ os.environ['DATABASE'] = ''
 
 ## cors
 os.environ['CORS_URL'] = ''
-
-# RACK CONFIG
-## declaring services
-services = ('home',)
