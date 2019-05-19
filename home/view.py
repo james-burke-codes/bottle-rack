@@ -10,5 +10,5 @@ app = application = Mold()
 
 @app.route('/', method=['GET'])
 def index():
-    return 'Home'
+    return app.template('home', msg='Welcome to Bottle-rack!')
 
