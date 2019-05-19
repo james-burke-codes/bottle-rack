@@ -9,8 +9,10 @@ git clone git@github.com:peregrinius/bottle-rack.git
 cd bottle-rack
 
 # if you want to use a virtual environment
-virtualenv $(which python3) venv
+virtualenv -p $(which python3) venv
 source venv/bin/activate
+
+pip install -r requirements.txt
 
 python run.py
 ```
@@ -22,6 +24,8 @@ The only required dependency is bottle-mold, which is used to promote cleaner co
 
 * handling CORS
 * ORM plugin configuration
+
+Note: sqlalchemy is also provided by default but only used for demonstation purposes
 
 ## Getting Started
 
