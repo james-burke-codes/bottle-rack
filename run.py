@@ -22,6 +22,8 @@ for service in config.services:
     sub_app = getattr(mod, 'app')
     app.merge(sub_app)
 
+    app.TEMPLATE_PATH.append('./{service}/templates/'.format(service=service))
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
