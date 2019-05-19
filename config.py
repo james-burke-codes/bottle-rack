@@ -1,4 +1,5 @@
 import os
+import sys
 
 """
 This config file is broken up into two sections
@@ -12,16 +13,16 @@ services = ('home',)
 
 
 # ENVIRONMENT VARIABLES
-## logging
+## logging - default INFO
 os.environ['LOGGING_LEVEL'] = 'INFO'
 
-## database
+## database - default sqlalchemy - sqlite://:memory:
 os.environ['DATABASE_ORM'] = 'sqlalchemy'
-os.environ['DBMS'] = 'postgresql'
-os.environ['DATABASE_PASS'] = ''
-os.environ['DATABASE_HOST'] = ''
-os.environ['DATABASE_PORT'] = ''
-os.environ['DATABASE'] = ''
+os.environ['DATABASE_CONNECTION_STRING'] = 'sqlite://'
+# e.g.
+# sqlite:///test.db
+# postgresql://scott:tiger@localhost/mydatabase
+# mysql://scott:tiger@localhost/foo
 
-## cors
+## cors - default disabled
 os.environ['CORS_URL'] = ''
