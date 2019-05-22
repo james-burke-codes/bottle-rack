@@ -20,7 +20,7 @@ python run.py
 
 ## Dependencies
 
-The only required dependency is bottle-mold, which is used to promote cleaner code in your services by removing boiler plate code from services. It includes:
+The only required dependency is bottle-mold, which is used to promote cleaner code in your services by removing boilerplate code from services. It includes:
 
 * handling CORS
 * ORM plugin configuration
