@@ -4,16 +4,13 @@ import logging
 import argparse
 import importlib
 
-# set ENVIRONMENT VARIABLES
 import config
 
-from bottle_mold import Mold
-
-# setup logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(format="%(asctime)s:%(name)s:%(lineno)s:%(levelname)s - %(message)s",
                     level=os.environ.get('LOGGING_LEVEL'))
 
+from bottle_mold import Mold
 app = application = Mold()
 
 # import services
