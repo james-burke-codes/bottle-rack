@@ -2,13 +2,15 @@
 import json
 import logging
 
-from bottle_mold import Mold
-
 logger = logging.getLogger(__name__)
+
+from bottle_mold import Mold
 
 app = application = Mold()
 
+from .model import List
+
 @app.route('/', method=['GET'])
-def index():
+def index(db):
     return app.template('home', msg='Welcome to Bottle-rack!')
 
