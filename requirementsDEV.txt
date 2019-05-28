@@ -1,0 +1,7 @@
+bottle-mold
+bottle-sqlalchemy
+pytest
+pytest-cov
+coverage
+codecov
+boddle
