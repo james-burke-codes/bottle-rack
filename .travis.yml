@@ -17,5 +17,5 @@ install:
   - pip install -r requirementsDEV.txt
 # command to run tests
 script:
+  - coverage run functional_test.py
   - pytest --cov=./
-  - codecov 
