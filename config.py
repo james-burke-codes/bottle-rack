@@ -7,9 +7,11 @@ This config file is broken up into two sections
 - rack config : which are used specifically for running your services on rack
 """
 
+sys.path.append('../bottle-mold/')
+
 # RACK CONFIG
 ## declaring services
-services = ('home',)
+#services = ('home', 'lists',)
 
 
 # ENVIRONMENT VARIABLES
