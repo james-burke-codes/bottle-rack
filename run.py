@@ -13,13 +13,12 @@ logging.basicConfig(format="%(asctime)s:%(name)s:%(lineno)s:%(levelname)s - %(me
 from bottle_mold import Mold
 app = application = Mold()
 
-# import services
-for service in config.services:
-    mod = __import__('{service}.view'.format(service=service), fromlist=['app'])
+for service in list(filter(lambda f: f.is_dir(), list(os.scandir('./services')))):
+    mod = __import__('services.{service}.view'.format(service=service.name), fromlist=['app'])
     sub_app = getattr(mod, 'app')
     app.merge(sub_app)
 
-    app.TEMPLATE_PATH.append('./{service}/templates/'.format(service=service))
+    app.TEMPLATE_PATH.append('./services/{service}/templates/'.format(service=service.name))
 
 
 if __name__ == '__main__':
