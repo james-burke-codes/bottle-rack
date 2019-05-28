@@ -10,7 +10,9 @@ app = application = Mold()
 
 from .model import List
 
-@app.route('/', method=['GET'])
-def index(db):
-    return app.template('home', msg='Welcome to Bottle-rack!')
+@app.route('/list/create', method=['POST'])
+def create(db):
+    reqdata = app.request.json
+    logger.info(reqdata)
+    return {}
 
