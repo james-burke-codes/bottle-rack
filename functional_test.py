@@ -3,6 +3,11 @@ import unittest
 from boddle import boddle
 import logging
 
+import sys
+
+# temp
+sys.path.append('../bottle-mold/')
+
 logger = logging.getLogger(__name__)
 
 from home import view as home
