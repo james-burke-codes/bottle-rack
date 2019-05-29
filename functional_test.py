@@ -43,10 +43,8 @@ class FunctionalTestCase(unittest.TestCase):
             assert 'Welcome to Bottle-rack!' in response
 
     def test_list_create_item(self):
-        with boddle(method='GET'):
-            response = self.services['list'].create(db=self.db)
-            assert 'Welcome to Bottle-rack!' in response
-
+        with boddle(method='POST', json={"name": "test1"}):
+            self.assertEqual(self.services['list'].create(db=self.db), {})
 
 
 if __name__ == '__main__':
