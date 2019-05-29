@@ -10,7 +10,7 @@ app = application = Mold()
 
 from .model import List
 
-@app.route('/list/create', method=['POST'])
+@app.route('/list', method=['POST'])
 def create(db):
     reqdata = app.request.json
     logger.info(reqdata)
