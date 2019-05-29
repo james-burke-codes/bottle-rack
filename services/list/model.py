@@ -14,9 +14,9 @@ class List(Base):
 
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String, nullable=False)
-    done = Column(Boolean, nullable=True)
+    done = Column(Boolean, nullable=True, default=False)
 
-    def __init__(self, name, done):
+    def __init__(self, name, done=False):
         self.name = name
         self.done = done
 
