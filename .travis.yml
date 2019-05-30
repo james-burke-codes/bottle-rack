@@ -16,4 +16,4 @@ install:
 script:
   - coverage run functional_test.py
   - pytest --cov=./
-  - codecov -t %CODECOV_TOKEN
+  - codecov -t $CODECOV_TOKEN
