@@ -1,4 +1,7 @@
 # bottle-rack
+
+[![codecov](https://codecov.io/gh/peregrinius/bottle-rack/branch/master/graph/badge.svg)](https://codecov.io/gh/peregrinius/bottle-rack) [![Build Status](https://travis-ci.org/peregrinius/bottle-rack.svg?branch=master)](https://travis-ci.org/peregrinius/bottle-rack)
+
 Similar to the concept of Flask Blueprints, Bottle-rack simplifies managing multiple Bottle services. You can use Bottle-rack to manage running and developing microservices locally and later deploying as separate services.
 
 
